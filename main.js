@@ -1,6 +1,22 @@
 let currentIndex = 0;
 let cycleflag = false;
-let flagarray = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"];
+let flagarray = [
+  "0",
+  "1",
+  "2",
+  "3",
+  "4",
+  "5",
+  "6",
+  "7",
+  "8",
+  "9",
+  "10",
+  "11",
+  "12",
+  "13",
+  "14",
+];
 let flagpaths = [
   "assets/images/lesbian-pride-flag.jpg",
   "assets/images/gay-pride-flag.jpg",
@@ -13,6 +29,10 @@ let flagpaths = [
   "assets/images/agender-pride-flag.jpg",
   "assets/images/pansexual-pride-flag.jpg",
   "assets/images/pangender-pride-flag.jpg",
+  "assets/images/nonbinary-pride-flag.jpg",
+  "assets/images/polysexual-pride-flag.jpg",
+  "assets/images/genderfluid-pride-flag.jpg",
+  "assets/images/genderqueer-pride-flag.jpg",
 ];
 function flagcycle() {
   cycleflag = true;
@@ -22,7 +42,7 @@ function checkflagtype() {
   let current = document.querySelector(".flag");
   console.log(cycleflag);
   if (cycleflag) {
-    if (currentIndex == 10) {
+    if (currentIndex == 14) {
       currentIndex = 0;
       console.log(currentIndex);
       let nextIndex = currentIndex;
