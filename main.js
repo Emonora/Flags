@@ -1,60 +1,54 @@
+let currentIndex = 0;
 let cycleflag = false;
+let flagarray = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"];
+let flagpaths = [
+  "assets/images/lesbian-pride-flag.jpg",
+  "assets/images/gay-pride-flag.jpg",
+  "assets/images/bisexual-pride-flag.jpg",
+  "assets/images/transgender-pride-flag.jpg",
+  "assets/images/queer-pride-flag.jpg",
+  "assets/images/intersex-pride-flag.jpg",
+  "assets/images/asexual-pride-flag.jpg",
+  "assets/images/aromantic-pride-flag.jpg",
+  "assets/images/agender-pride-flag.jpg",
+  "assets/images/pansexual-pride-flag.jpg",
+  "assets/images/pangender-pride-flag.jpg",
+];
 function flagcycle() {
   cycleflag = true;
 }
 
 function checkflagtype() {
   let current = document.querySelector(".flag");
+  console.log(cycleflag);
   if (cycleflag) {
-    if (current.id === "lesbian") {
-      current.id = "gay";
-      let flagtochange = document.querySelector(".flag-img");
-      flagtochange.src = "assets/images/gay-pride-flag.jpg";
+    if (currentIndex == 10) {
+      currentIndex = 0;
+      console.log(currentIndex);
+      let nextIndex = currentIndex;
+      console.log(nextIndex);
+      current.id = flagarray[nextIndex];
+      let nextImage = flagpaths[nextIndex];
+      let nextFlag = document.querySelector(".flag-img");
+      nextFlag.src = nextImage;
       cycleflag = false;
-    } else if (current.id === "gay") {
-      current.id = "bisexual";
-      let flagtochange = document.querySelector(".flag-img");
-      flagtochange.src = "assets/images/bisexual-pride-flag.jpg";
-      cycleflag = false;
-    } else if (current.id === "bisexual") {
-      current.id = "transgender";
-      let flagtochange = document.querySelector(".flag-img");
-      flagtochange.src = "assets/images/transgender-pride-flag.jpg";
-      cycleflag = false;
-    } else if (current.id === "transgender") {
-      current.id = "queer";
-      let flagtochange = document.querySelector(".flag-img");
-      flagtochange.src = "assets/images/queer-pride-flag.jpg";
-      cycleflag = false;
-    } else if (current.id === "queer") {
-      current.id = "intersex";
-      let sorry = document.getElementById("bad-image");
-      sorry.innerHTML = "Sorry the flag looks weird. It compressed wrong :(";
-      let flagtochange = document.querySelector(".flag-img");
-      flagtochange.src = "assets/images/intersex-pride-flag.jpg";
-      cycleflag = false;
-    } else if (current.id === "intersex") {
-      let sorry = document.getElementById("bad-image");
-      sorry.innerHTML = "";
-      current.id = "asexual";
-      let flagtochange = document.querySelector(".flag-img");
-      flagtochange.src = "assets/images/asexual-pride-flag.jpg";
-      cycleflag = false;
-    } else if (current.id === "asexual") {
-      current.id = "aromantic";
-      let flagtochange = document.querySelector(".flag-img");
-      flagtochange.src = "assets/images/aromantic-pride-flag.jpg";
-      cycleflag = false;
-    } else if (current.id === "aromantic") {
-      current.id = "agender";
-      let flagtochange = document.querySelector(".flag-img");
-      flagtochange.src = "assets/images/agender-pride-flag.jpg";
-      cycleflag = false;
+      console.log(current.id);
+      console.log(current.src);
     } else {
-      current.id = "lesbian";
-      let flagtochange = document.querySelector(".flag-img");
-      flagtochange.src = "assets/images/lesbian-pride-flag.jpg";
+      console.log(current.id);
+      currentIndex = current.id;
+      let tempnext;
+      tempnext = currentIndex++;
+      console.log(currentIndex);
+      let nextIndex = currentIndex;
+      console.log(nextIndex);
+      current.id = flagarray[nextIndex];
+      let nextImage = flagpaths[nextIndex];
+      let nextFlag = document.querySelector(".flag-img");
+      nextFlag.src = nextImage;
       cycleflag = false;
+      console.log(current.id);
+      console.log(current.src);
     }
   }
 }
