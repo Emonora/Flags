@@ -66,12 +66,12 @@ function checkflagtype() {
       let nextImage = flagpaths[nextIndex];
       let nextFlag = document.querySelector(".flag-img");
       nextFlag.src = nextImage;
-      if (currentIndex == 6) {
-        let badflagdesign = document.querySelector("bad-image");
+      if (currentIndex == 5) {
+        let badflagdesign = document.querySelector("#bad-image");
         badflagdesign.innerHTML =
           "Sorry the flag looks strange. It compressed wrong. :(";
       } else {
-        let badflagdesign = document.querySelector("bad-image");
+        let badflagdesign = document.querySelector("#bad-image");
         badflagdesign.innerHTML = "";
       }
       cycleflag = false;
