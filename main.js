@@ -34,6 +34,23 @@ let flagpaths = [
   "assets/images/genderfluid-pride-flag.jpg",
   "assets/images/genderqueer-pride-flag.jpg",
 ];
+let pagepaths = [
+  "./pages/lesbian.html",
+  "./pages/wip.html",
+  "./pages/wip.html",
+  "./pages/wip.html",
+  "./pages/wip.html",
+  "./pages/wip.html",
+  "./pages/wip.html",
+  "./pages/wip.html",
+  "./pages/wip.html",
+  "./pages/wip.html",
+  "./pages/wip.html",
+  "./pages/wip.html",
+  "./pages/wip.html",
+  "./pages/wip.html",
+  "./pages/wip.html",
+]
 function flagcycle() {
   cycleflag = true;
 }
@@ -55,6 +72,8 @@ function checkflagtype() {
       console.log(current.id);
       console.log(current.src);
     } else {
+      let href = document.getElementById("flag-img");
+      href.setAttribute(href, "pagepaths[currentIndex]");
       console.log(current.id);
       currentIndex = current.id;
       let tempnext;
