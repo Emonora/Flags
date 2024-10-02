@@ -1,0 +1,19 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.container label {
+    border-radius: 50px;
+    border: 2px solid black;
+}
+
+.container label p {
+    color: black;
+    font-size: normal;
+    font-weight: normal;
+    font-style: normal;
+    font-family: Arial, Helvetica, sans-serif;
+}
