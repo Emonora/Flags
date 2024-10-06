@@ -1,27 +1,24 @@
+* {
+    margin: 0;
+    padding-bottom: 5px;
+}
+
 .container {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
+    position: absolute;
 }
 
-.container label {
-    border-radius: 50px;
-    border: 2px solid black;
-    float: left;
-    overflow: none;
+.container.one {
+    left: 2.5px;
 }
 
-.container label p {
-    color: black;
-    font-size: normal;
-    font-weight: normal;
-    font-style: normal;
-    font-family: Arial, Helvetica, sans-serif;
-    text-align: center;
+.container.two {
+    left: 25%;
 }
 
-.container label img {
-    width: 100px;
-    height: 100px;
+.container.three { 
+    left: 50%;
+}
+
+.container.four {
+    left: 75%;
 }
