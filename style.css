@@ -25,3 +25,11 @@ h1 {
 #bad-image {
   text-align: center;
 }
+#flagpg-link {
+  width: 100px;
+  display: inline-block;
+  padding-left: 0;
+  margin-left: 0;
+  position: absolute;
+  left: 46.58%;
+}

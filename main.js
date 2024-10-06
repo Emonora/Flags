@@ -56,48 +56,58 @@ function flagcycle() {
 }
 
 function checkflagtype() {
+  if (typeof cycleflag === 'undefined' || typeof currentIndex === 'undefined' || 
+      !Array.isArray(flagarray) || !Array.isArray(flagpaths) || !Array.isArray(pagepaths)) {
+    console.error("Required variables are not defined or initialized properly.");
+    return;
+  }
+
   let current = document.querySelector(".flag");
-  console.log(cycleflag);
+  if (!current) {
+    console.error("No element found with class .flag");
+    return;
+  }
+
   if (cycleflag) {
-    if (currentIndex == 14) {
+    if (currentIndex >= flagarray.length) {
       currentIndex = 0;
-      console.log(currentIndex);
-      let nextIndex = currentIndex;
-      console.log(nextIndex);
-      current.id = flagarray[nextIndex];
-      let nextImage = flagpaths[nextIndex];
-      let nextFlag = document.querySelector(".flag-img");
+    }
+
+
+    current.id = flagarray[currentIndex];
+    let nextImage = flagpaths[currentIndex];
+    let nextFlag = document.querySelector("#flag-img");
+    
+    if (nextFlag) {
       nextFlag.src = nextImage;
-      cycleflag = false;
-      console.log(current.id);
-      console.log(current.src);
     } else {
-      let href = document.getElementById("flag-img");
-      href.setAttribute(href, "pagepaths[currentIndex]");
-      console.log(current.id);
-      currentIndex = current.id;
-      let tempnext;
-      tempnext = currentIndex++;
-      console.log(currentIndex);
-      let nextIndex = currentIndex;
-      console.log(nextIndex);
-      current.id = flagarray[nextIndex];
-      let nextImage = flagpaths[nextIndex];
-      let nextFlag = document.querySelector(".flag-img");
-      nextFlag.src = nextImage;
-      if (currentIndex == 5) {
-        let badflagdesign = document.querySelector("#bad-image");
-        badflagdesign.innerHTML =
-          "Sorry the flag looks strange. It compressed wrong. :(";
-      } else {
-        let badflagdesign = document.querySelector("#bad-image");
+      console.error("No element found with class #flag-img");
+      return;
+    }
+
+    let flagPageLink = document.querySelector("#flagpg-link");
+    if (flagPageLink) {
+      flagPageLink.setAttribute("href", pagepaths[currentIndex]);
+    } else {
+      console.error("No element found with ID #flagpg-link");
+      return;
+    }
+
+    let badflagdesign = document.querySelector("#bad-image");
+    if (currentIndex === 5) {
+      if (badflagdesign) {
+        badflagdesign.innerHTML = "Sorry the flag looks strange. It compressed wrong. :(";
+      }
+    } else {
+      if (badflagdesign) {
         badflagdesign.innerHTML = "";
       }
-      cycleflag = false;
-      console.log(current.id);
-      console.log(current.src);
     }
+
+    currentIndex++;
+    cycleflag = false; 
   }
 }
+
 
 setInterval(checkflagtype, 1);
