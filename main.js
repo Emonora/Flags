@@ -102,6 +102,11 @@ let flagdata = [
     path: "assets/images/demisexual-pride-flag.jpg",
     page: "./pages/wip.html",
   },
+  {
+    index: 20,
+    path: "assets/images/sapphic-pride-flag.jpg",
+    page: "./pages/wip.html",
+  },
 ];
 
 function flagcycle() {
