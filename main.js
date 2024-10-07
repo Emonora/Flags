@@ -97,6 +97,11 @@ let flagdata = [
     path: "assets/images/gray-ace-pride-flag.jpg",
     page: "./pages/wip.html",
   },
+  {
+    index: 19,
+    path: "assets/images/demisexual-pride-flag.jpg",
+    page: "./pages/wip.html",
+  },
 ];
 
 function flagcycle() {
