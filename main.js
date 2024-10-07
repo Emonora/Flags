@@ -92,6 +92,11 @@ let flagdata = [
     path: "assets/images/gray-aromantic-pride-flag.jpg",
     page: "./pages/wip.html",
   },
+  {
+    index: 18,
+    path: "assets/images/gray-ace-pride-flag.jpg",
+    page: "./pages/wip.html",
+  },
 ];
 
 function flagcycle() {
