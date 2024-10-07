@@ -1,99 +1,103 @@
 let currentIndex = 0;
 let cycleflag = false;
-let flagarray = [
-  "0",
-  "1",
-  "2",
-  "3",
-  "4",
-  "5",
-  "6",
-  "7",
-  "8",
-  "9",
-  "10",
-  "11",
-  "12",
-  "13",
-  "14",
+
+let flagdata = [
+  {
+    index: 0,
+    path: "assets/images/lesbian-pride-flag.jpg",
+    page: "./pages/lesbian.html",
+  },
+  {
+    index: 1,
+    path: "assets/images/gay-pride-flag.jpg",
+    page: "./pages/wip.html",
+  },
+  {
+    index: 2,
+    path: "assets/images/bisexual-pride-flag.jpg",
+    page: "./pages/wip.html",
+  },
+  {
+    index: 3,
+    path: "assets/images/transgender-pride-flag.jpg",
+    page: "./pages/wip.html",
+  },
+  {
+    index: 4, 
+    path: "assets/images/queer-pride-flag.jpg",
+    page: "./pages/wip.html",
+  }, 
+  {
+    index: 5, 
+    path: "assets/images/intersex-pride-flag.jpg",
+    page: "./pages/wip.html",
+  },
+  {
+    index: 6,
+    path: "assets/images/asexual-pride-flag.jpg",
+    page: "./pages/wip.html",
+  },
+  {
+    index: 7, 
+    path: "assets/images/aromantic-pride-flag.jpg",
+    page: "./pages/wip.html",
+  },
+  {
+    index: 8,
+    path: "assets/images/agender-pride-flag.jpg",
+    page: "./pages/wip.html",
+  },
+  {
+    index: 9,
+    path: "assets/images/pansexual-pride-flag.jpg",
+    page: "./pages/wip.html",
+  },
+  {
+    index: 10,
+    path: "assets/images/pangender-pride-flag.jpg",
+    page: "./pages/wip.html",
+  },
+  {
+    index: 11,
+    path: "assets/images/nonbinary-pride-flag.jpg",
+    page: "./pages/wip.html",
+  },
+  {
+    index: 12,
+    path: "assets/images/polysexual-pride-flag.jpg",
+    page: "./pages/wip.html",
+  },
+  {
+    index: 13,
+    path: "assets/images/genderfluid-pride-flag.jpg",
+    page: "./pages/wip.html",
+  },
+  {
+    index: 14,
+    path: "assets/images/genderqueer-pride-flag.jpg",
+    page: "./pages/wip.html",
+  },
+  {
+    index: 15,
+    path: "assets/images/bigender-pride-flag.jpg",
+    page: "./pages/wip.html",
+  },
 ];
-let flagpaths = [
-  "assets/images/lesbian-pride-flag.jpg",
-  "assets/images/gay-pride-flag.jpg",
-  "assets/images/bisexual-pride-flag.jpg",
-  "assets/images/transgender-pride-flag.jpg",
-  "assets/images/queer-pride-flag.jpg",
-  "assets/images/intersex-pride-flag.jpg",
-  "assets/images/asexual-pride-flag.jpg",
-  "assets/images/aromantic-pride-flag.jpg",
-  "assets/images/agender-pride-flag.jpg",
-  "assets/images/pansexual-pride-flag.jpg",
-  "assets/images/pangender-pride-flag.jpg",
-  "assets/images/nonbinary-pride-flag.jpg",
-  "assets/images/polysexual-pride-flag.jpg",
-  "assets/images/genderfluid-pride-flag.jpg",
-  "assets/images/genderqueer-pride-flag.jpg",
-];
-let pagepaths = [
-  "./pages/lesbian.html",
-  "./pages/wip.html",
-  "./pages/wip.html",
-  "./pages/wip.html",
-  "./pages/wip.html",
-  "./pages/wip.html",
-  "./pages/wip.html",
-  "./pages/wip.html",
-  "./pages/wip.html",
-  "./pages/wip.html",
-  "./pages/wip.html",
-  "./pages/wip.html",
-  "./pages/wip.html",
-  "./pages/wip.html",
-  "./pages/wip.html",
-]
+
 function flagcycle() {
   cycleflag = true;
 }
 
 function checkflagtype() {
-  if (typeof cycleflag === 'undefined' || typeof currentIndex === 'undefined' || 
-      !Array.isArray(flagarray) || !Array.isArray(flagpaths) || !Array.isArray(pagepaths)) {
-    console.error("Required variables are not defined or initialized properly.");
-    return;
-  }
-
-  let current = document.querySelector(".flag");
-  if (!current) {
-    console.error("No element found with class .flag");
-    return;
-  }
-
   if (cycleflag) {
-    if (currentIndex >= flagarray.length) {
+
+    if (currentIndex >= flagdata.length) {
       currentIndex = 0;
-    }
+    } 
 
-
-    current.id = flagarray[currentIndex];
-    let nextImage = flagpaths[currentIndex];
-    let nextFlag = document.querySelector("#flag-img");
-    
-    if (nextFlag) {
-      nextFlag.src = nextImage;
-    } else {
-      console.error("No element found with class #flag-img");
-      return;
-    }
-
-    let flagPageLink = document.querySelector("#flagpg-link");
-    if (flagPageLink) {
-      flagPageLink.setAttribute("href", pagepaths[currentIndex]);
-    } else {
-      console.error("No element found with ID #flagpg-link");
-      return;
-    }
-
+    let current = document.querySelector(".flag");
     let badflagdesign = document.querySelector("#bad-image");
+
     if (currentIndex === 5) {
       if (badflagdesign) {
         badflagdesign.innerHTML = "Sorry the flag looks strange. It compressed wrong. :(";
@@ -104,10 +108,18 @@ function checkflagtype() {
       }
     }
 
+    current.id = flagdata[currentIndex].index;
+    let nextImage = flagdata[currentIndex].path;
+    let nextFlag = document.querySelector("#flag-img");
+    
+    nextFlag.setAttribute("src", nextImage);
+
+    let flagPageLink = document.querySelector("#flagpg-link");
+    flagPageLink.setAttribute("href", flagdata[currentIndex].page);
+
     currentIndex++;
     cycleflag = false; 
   }
 }
-
 
 setInterval(checkflagtype, 1);
