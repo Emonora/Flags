@@ -82,6 +82,11 @@ let flagdata = [
     path: "assets/images/bigender-pride-flag.jpg",
     page: "./pages/wip.html",
   },
+  {
+    index: 16,
+    path: "assets/images/abrosexual-pride-flag.jpg",
+    page: "./pages/wip.html"
+  }
 ];
 
 function flagcycle() {
