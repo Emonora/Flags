@@ -14,3 +14,16 @@ img {
     position: absolute;
     left: 49.5%;
 }
+
+html {
+    background: rgb(213,45,0);
+    background: radial-gradient(circle, rgba(213,45,0,1) 14%, rgba(240,117,39,1) 29%, rgba(255,154,86,1) 43%, rgba(255,255,255,1) 57%, rgba(209,98,166,1) 71%, rgba(181,85,146,1) 85%, rgba(163,2,98,1) 100%); 
+}
+
+* {
+    color: black;
+}
+
+a {
+    color: white;
+}
