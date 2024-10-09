@@ -1,5 +1,4 @@
 .flag {
-  margin-top: 4%;
   text-align: center;
   margin-left: 39%;
   margin-right: 61%;
@@ -9,7 +8,7 @@
   width: 100px;
   height: 100px;
   margin-top: 10%;
-  margin-left: 46%;
+  margin-left: 46.8%;
   margin-right: 46%;
   padding: 0;
   border: 2px black solid;
@@ -32,4 +31,23 @@ h1 {
   margin-left: 0;
   position: absolute;
   left: 46.58%;
+  top: 68%;
+  text-decoration: none;
+}
+
+
+* {
+  color: purple;
+}
+
+html {
+  background-image: linear-gradient(90deg, #ffffff, #000000);
+}
+
+#intro {
+  width: 50%;
+  text-align: center;
+  align-items: center;
+  padding-bottom: 0;
+  margin-bottom: 0;
 }
